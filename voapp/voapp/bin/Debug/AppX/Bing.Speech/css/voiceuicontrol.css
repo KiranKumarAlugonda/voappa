@@ -1,0 +1,518 @@
+﻿/*
+MICROSOFT LIMITED PUBLIC LICENSE version 1.1
+--------------------------------------------
+
+This license governs use of code marked as "sample" or "example" available on this web site without a license agreement, as provided under the section above titled "NOTICE SPECIFIC TO SOFTWARE AVAILABLE ON THIS WEB SITE." If you use such code (the "software"), you accept this license. If you do not accept the license, do not use the software.
+
+1. Definitions
+The terms "reproduce," "reproduction," "derivative works," and "distribution" have the same meaning here as under U.S. copyright law. 
+A "contribution" is the original software, or any additions or changes to the software.
+A "contributor" is any person that distributes its contribution under this license.
+"Licensed patents" are a contributor's patent claims that read directly on its contribution.
+
+2. Grant of Rights
+(A) Copyright Grant - Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free copyright license to reproduce its contribution, prepare derivative works of its contribution, and distribute its contribution or any derivative works that you create.
+(B) Patent Grant - Subject to the terms of this license, including the license conditions and limitations in section 3, each contributor grants you a non-exclusive, worldwide, royalty-free license under its licensed patents to make, have made, use, sell, offer for sale, import, and/or otherwise dispose of its contribution in the software or derivative works of the contribution in the software.
+
+3. Conditions and Limitations
+(A) No Trademark License- This license does not grant you rights to use any contributors' name, logo, or trademarks.
+(B) If you bring a patent claim against any contributor over patents that you claim are infringed by the software, your patent license from such contributor to the software ends automatically.
+(C) If you distribute any portion of the software, you must retain all copyright, patent, trademark, and attribution notices that are present in the software.
+(D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license.
+(E) The software is licensed "as-is." You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+(F) Platform Limitation - The licenses granted in sections 2(A) and 2(B) extend only to the software or derivative works that you create that run directly on a Microsoft Windows operating system product, Microsoft run-time technology (such as the .NET Framework or Silverlight), or Microsoft application platform (such as Microsoft Office or Microsoft Dynamics).
+*/
+
+/* Resolution/Orientation dependent style sheet elements */
+/* Windows 8 minimum Snap view */
+@media screen and (width:320px){
+
+	/* -------------- Scramble Text --------------------- */
+    .voice-ui-control-visual-element-scramble-text {
+		position:absolute;	
+		width:154px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.5;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+    .voice-ui-control-visual-element-garbage-text {
+		position:absolute;	
+		width:154px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.3;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	.voice-ui-control-visual-element-gradient-text {
+		position:absolute;	
+		width:154px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FFFFFF;	
+        opacity:0.75;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	/* ------------------------------------------------- */
+
+	/* ---------------- VUMeter ------------------------ */
+	.voice-ui-control-visual-element-vumeter {
+		position:absolute;	
+		width:124px;
+		margin-left:8px;	
+		text-align:left;
+		font-family:'segoe ui';
+		font-size:20px;	
+		float:right;
+		right:90px;
+		bottom:0px;			
+	}
+
+	/* ------------------------------------------------- */
+	
+	/* --------------- Text Area ----------------------- */
+	.voice-ui-control-visual-element-tiptext {
+		position: absolute;
+		visibility:hidden;
+	}
+
+}
+
+/* Windows 8.1 minimum Snap view (500px) and too narrow portraits where we will show only VUMeter element and hide text area due to real estate constraint*/
+@media screen and (min-width:500px) and (max-width:647px){
+
+	/* -------------- Scramble Text --------------------- */
+    .voice-ui-control-visual-element-scramble-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.5;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+    .voice-ui-control-visual-element-garbage-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.3;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	.voice-ui-control-visual-element-gradient-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FFFFFF;	
+        opacity:0.75;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	/* ------------------------------------------------- */
+
+	/* ---------------- VUMeter ------------------------ */
+	.voice-ui-control-visual-element-vumeter {
+		position:absolute;	
+		width:268px;
+		margin-left:8px;	
+		text-align:left;
+		font-family:'segoe ui';
+		font-size:20px;	
+		float:right;
+		right:90px;
+		bottom:0px;			
+	}
+
+	/* ------------------------------------------------- */
+	
+	/* --------------- Text Area ----------------------- */
+	.voice-ui-control-visual-element-tiptext {
+		position: absolute;
+		visibility:hidden;
+	}
+
+}
+
+@media screen and (orientation:landscape){
+
+	/* -------------- Scramble Text --------------------- */
+    .voice-ui-control-visual-element-scramble-text {
+		position:absolute;	
+		width:290px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.5;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+    .voice-ui-control-visual-element-garbage-text {
+		position:absolute;	
+		width:290px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.3;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	.voice-ui-control-visual-element-gradient-text {
+		position:absolute;	
+		width:290px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FFFFFF;	
+        opacity:0.75;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	/* ------------------------------------------------- */
+
+	/* ----------------- VUMeter ----------------------- */
+	.voice-ui-control-visual-element-vumeter {
+		position:absolute;	
+		width:268px;	
+		margin-left:32px;	
+		text-align:left;
+		font-family:'segoe ui';
+		font-size:20px;	
+		float:right;
+		right:90px;
+		bottom:0px;	    
+	}
+	/* ------------------------------------------------- */
+	
+	/* --------------- Text Area ----------------------- */
+	.voice-ui-control-visual-element-tiptext {
+		position: absolute;
+		bottom:0px;	
+		margin-left:50px;				
+		margin-bottom:5px;
+		margin-right:calc(268px + 32px + 90px);
+		text-align:left;
+		word-wrap:break-word;	
+		font-family:'segoe ui';
+		font-size:16px;
+		color:#FFFFFF;	
+        height:60px;        /*Height for having max 2 lines in a <div>*/	        
+	}
+
+}
+
+/* Portraits with real estate to render Text area in variable size and VUMeter in full size version */
+/* Text area will resize itself to fill in the current portrait real estate */
+@media screen and (orientation:portrait) and (min-width:840px){
+
+    /* -------------- Scramble Text --------------------- */
+    .voice-ui-control-visual-element-scramble-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.5;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+    .voice-ui-control-visual-element-garbage-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.3;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	.voice-ui-control-visual-element-gradient-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FFFFFF;	
+        opacity:0.75;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	/* ------------------------------------------------- */
+
+	/* ----------------- VUMeter ----------------------- */
+	.voice-ui-control-visual-element-vumeter {
+		position:absolute;	
+		width:268px;		
+		margin-left:32px;
+		text-align:left;
+		font-family:'segoe ui';
+		font-size:20px;	
+		float:right;
+		right:90px;
+		bottom:0px;	    
+	}
+
+	/* ------------------------------------------------- */
+	
+	/* --------------- Text Area ----------------------- */
+	.voice-ui-control-visual-element-tiptext {
+		position: absolute;
+		bottom:0px;	
+		margin-left:50px;
+		margin-bottom:5px;
+		margin-right:calc(268px + 32px + 90px);
+		text-align:left;
+		word-wrap:break-word;	
+		font-family:'segoe ui';
+		font-size:16px;	
+		color:#FFFFFF;	
+        height:60px;        /*Height for having max 2 lines in a <div>*/	        
+	}
+}
+
+/* Portraits with real estate to render Text area in it's minimum size and VUMeter in variable sized small version  */
+/* VUMeter will resize itself to fit in the current portrait real estate */
+@media screen and (orientation:portrait) and (min-width:648px) and (max-width:839px) {
+
+    /* -------------- Scramble Text --------------------- */
+    .voice-ui-control-visual-element-scramble-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.5;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+    .voice-ui-control-visual-element-garbage-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FEFEFE;
+		opacity:0.3;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	.voice-ui-control-visual-element-gradient-text {
+		position:absolute;	
+		width:294px;	
+		text-align:left;	
+		font-family:'segoe ui light';	
+		font-size:32pt;	
+		color:#FFFFFF;	
+        opacity:0.75;
+		float:right;
+		right:90px;
+		bottom:22px;	
+		white-space:pre;
+		overflow:hidden;	
+    }
+	/* ------------------------------------------------- */
+
+	/* ----------------- VUMeter ----------------------- */
+	.voice-ui-control-visual-element-vumeter {
+		position:absolute;	
+		width:calc(76px + (100% - 648px));		
+		margin-left:32px;
+		text-align:left;
+		font-family:'segoe ui';
+		font-size:20px;	
+		float:right;
+		right:90px;
+		bottom:0px;	    
+	}
+
+	/* ------------------------------------------------- */
+	
+	/* --------------- Text Area ----------------------- */
+	.voice-ui-control-visual-element-tiptext {
+		position: absolute;
+		bottom:0px;	
+		margin-left:50px;
+		margin-bottom:5px;
+		margin-right:calc((76px + (100% - 648px)) + 32px + 90px);
+		text-align:left;
+		word-wrap:break-word;	
+		font-family:'segoe ui';
+		font-size:16px;	
+		color:#FFFFFF;	
+        height:60px;        /*Height for having max 2 lines in a <div>*/	                
+	}
+}
+
+/* Resolution/Orientation independent style sheet elements */
+/* VoiceUIControl background bar */
+.voice-ui-control {	
+	position:absolute;
+	width:100%;
+	height:60px;
+	background-color:#000000;
+	opacity:0.75;			
+	bottom:0;
+	z-index:999;	    
+}
+
+/* VoiceUIControl Action Button*/
+.voice-ui-control-actions {
+	position: relative;
+	margin-left:18px;
+	margin-right:32px;
+	width:40px;	
+	height:60px;
+	font-family:'segoe ui symbol';			
+	white-space:nowrap;
+	visibility:visible;	
+	vertical-align:middle;
+	text-align:center;
+	float:right;
+	cursor:pointer;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+/* Control button */
+/* Go button */
+.win-gobutton {
+    position: absolute;	
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    background-clip: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0;
+    text-align: center;
+
+    /* Normal sizing. */
+    width: 40px;
+    height: 40px;
+    font-size: 14pt;
+    line-height: 37px; /* line-height must match the content box height. */
+    vertical-align: baseline;
+}
+.win-gobutton:hover, .win-gobutton:hover:active {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+}
+.win-gobutton::before {
+    font-family: "Segoe UI Symbol";
+    font-weight: normal;
+    content: "\E111";           /* symbol code for "forward arrow", i.e. go button*/
+    vertical-align: 50%;
+}
+.win-gobutton:disabled, .win-gobutton:disabled:active {
+    visibility: hidden;
+}
+/* Cancel button */
+.win-cancelbutton {
+    position: absolute;	
+    display: inline-block;
+    min-width: 0;
+    min-height: 0;
+    background-clip: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0;
+    text-align: center;
+
+    /* Normal sizing. */
+    width: 40px;
+    height: 40px;
+    font-size: 14pt;
+    line-height: 37px; /* line-height must match the content box height. */
+    vertical-align: baseline;
+}
+.win-cancelbutton:hover, .win-cancelbutton:hover:active {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+}
+.win-cancelbutton::before {
+    font-family: "Segoe UI Symbol";
+    font-weight: normal;
+    content: "\E10A";           /* symbol code for "cancel", i.e. cancel button*/
+    vertical-align: 50%;
+}
+.win-cancelbutton:disabled, .win-cancelbutton:disabled:active {
+    visibility: hidden;
+}
+
+.visible {
+	visibility:visible;	
+}
+.hidden {
+	visibility:hidden;
+}
+
+.color-highlight {
+    color: #00B4FF;     /* Modern Blue*/
+}

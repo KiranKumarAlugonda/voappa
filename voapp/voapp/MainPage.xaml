@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="voapp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:voapp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <!--This application demonstrates a complete custom speech recognition UI-->
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="632*"/>
+            <ColumnDefinition Width="51*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Panel to show at application start and after cancel.-->
+        <StackPanel x:Name="StartPanel" Visibility="Visible">
+            <TextBlock Text="Click the microphone and get ready to say something" 
+                       FontSize="50" HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" />
+            <!--Starts speech recognition, but may not be ready immediately. -->
+            <Button x:Name="SpeakButton" Click="SpeakButton_Click"  Content="start" Width="120" Height="70"
+        HorizontalAlignment="Center" />
+        </StackPanel>
+
+        <!--Panel to show while initializing the SpeechRecognizer.
+            This panel may not be seen if initialization happens quickly.-->
+        <StackPanel x:Name="InitPanel" Visibility="Collapsed" >
+            <TextBlock Text="Ready, set..." FontSize="50" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <!--Panel to show while listening for user speech.-->
+        <StackPanel x:Name="ListenPanel" Visibility="Collapsed" >
+            <TextBlock Text="Speak!" FontSize="80" 
+                       HorizontalAlignment="Center" />
+            <!--Shows at different opacity levels depending on speech volume.-->
+            <TextBlock x:Name="VolumeMeter" Text="Volume" FontSize="60" 
+                       HorizontalAlignment="Center" Margin="0,80,0,0" />
+            <!--Click when done speaking, or wait for app to recognize end of 
+                speech.-->
+            <Button x:Name="StopButton" Click="StopButton_Click"
+        AutomationProperties.Name="Done"  Width="120" Height="70" Content="stop" Background="Aqua"
+        HorizontalAlignment="Center" Margin="0,170, 0, 0" />
+        </StackPanel>
+
+        <!--Panel to show while interpreting speech input.-->
+        <StackPanel x:Name="ThinkPanel" Visibility="Collapsed" >
+            <TextBlock Text="Thinking..." FontSize="60" 
+                       HorizontalAlignment="Center" />
+            <TextBlock Text="You might have said:" FontSize="40" 
+                       HorizontalAlignment="Center" Margin="0,50,0,0" />
+            <!--Shows possible text before deciding on final interpretation.
+                May flash too quickly to see for easy phrases.-->
+            <TextBlock x:Name="IntermediateResults" FontSize="40" 
+                       HorizontalAlignment="Center" Margin="0,30,0,0" />
+        </StackPanel>
+
+        <!--Panel to show when speech recognition complete.
+            May also be shown in case of exceptions.-->
+        <StackPanel x:Name="CompletePanel" Visibility="Collapsed" >
+            <TextBlock Text="Done." FontSize="60" 
+                       HorizontalAlignment="Center" />
+            <!--Displays confidence level of final result.-->
+            <TextBlock x:Name="ConfidenceText" FontSize="40" 
+                       HorizontalAlignment="Center" Margin="0,50,0,0" />
+            <!--Displays final result text.-->
+            <TextBlock x:Name="FinalResult" FontSize="40" 
+                       HorizontalAlignment="Center" Margin="0,30,0,0" />
+            <TextBlock x:Name="AlternatesTitle" Text="But you might have said:" 
+                       FontSize="40" HorizontalAlignment="Center" 
+                       Margin="0,50,0,0" />
+            <!--Displays alternate results. Copies selected text to 
+                FinalResult.-->
+            <ListBox x:Name="AlternatesListBox" HorizontalAlignment="Center" 
+                     SelectionChanged="AlternatesListBox_SelectionChanged" />
+        </StackPanel>
+
+        <!--Cancel button, to be shown in all states except for application
+            start -->
+        <Button x:Name="CancelButton" Visibility="Collapsed" Content="cancel"  Height="70" Width="120" 
+        AutomationProperties.Name="Cancel" HorizontalAlignment="Center" 
+        VerticalAlignment="Bottom" Click="CancelButton_Click" />
+    </Grid>
+</Page>
