@@ -12,7 +12,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Threading;
+using System.Threading.Tasks;
 using Bing.Speech;
+using Auth0.SDK;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -75,11 +78,13 @@ namespace voapp
         SpeechRecognizer SR;
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            Login();
+
             // Apply credentials from the Windows Azure Data Marketplace.
             var credentials = new SpeechAuthorizationParameters();
-            credentials.ClientId = "<YOUR CLIENT ID>";
-            credentials.ClientSecret = "<YOUR CLIENT SECRET>";
-
+            credentials.ClientId = "sfBNUQUSidqrlTxSeQphLjZ2SJ8J49VI";
+            credentials.ClientSecret = "F0NdHYIZFRrxiXdqxRptxl_W7nesvEJg2_uLtd3yiaRQz1x71Jwqwb0kKFD3Dhkr";
+            
             // Initialize the speech recognizer.
             SR = new SpeechRecognizer("en-US", credentials);
 
@@ -129,6 +134,16 @@ namespace voapp
             }
         }
 
+        private async void Login()
+        {
+            var auth0 = new Auth0Client(
+                    "majji.auth0.com",
+                    "sfBNUQUSidqrlTxSeQphLjZ2SJ8J49VI");
+
+            var user = await auth0.LoginAsync();
+        }
+
+       
         string uiState = "";
         private void SetPanel(StackPanel panel)
         {
@@ -153,6 +168,16 @@ namespace voapp
             // depends on a web service.
             try
             {
+                
+                
+                /* 
+                    Use this object to do wonderful things, e.g.:
+                      - get user email => user.Profile["email"].ToString()
+                      - get facebook/google/twitter/etc access token => user.Profile["identities"][0]["access_token"]
+                      - get Windows Azure AD groups => user.Profile["groups"]
+                      - etc.
+                */
+
                 // Start speech recognition.
                 var result = await SR.RecognizeSpeechToTextAsync();
 
