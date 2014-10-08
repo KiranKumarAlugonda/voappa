@@ -78,12 +78,15 @@ namespace voapp
         SpeechRecognizer SR;
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Login();
+            //Login();
 
             // Apply credentials from the Windows Azure Data Marketplace.
             var credentials = new SpeechAuthorizationParameters();
-            credentials.ClientId = "sfBNUQUSidqrlTxSeQphLjZ2SJ8J49VI";
-            credentials.ClientSecret = "F0NdHYIZFRrxiXdqxRptxl_W7nesvEJg2_uLtd3yiaRQz1x71Jwqwb0kKFD3Dhkr";
+            //credentials.ClientId = "sfBNUQUSidqrlTxSeQphLjZ2SJ8J49VI";
+            //credentials.ClientSecret = "F0NdHYIZFRrxiXdqxRptxl_W7nesvEJg2_uLtd3yiaRQz1x71Jwqwb0kKFD3Dhkr";
+
+            credentials.ClientId = "VoiceApp_POC";
+            credentials.ClientSecret = "/CUK7HlQQVGI+eSQTaZzvXHk+pp0N1KBZYzizACpPvE=";
             
             // Initialize the speech recognizer.
             SR = new SpeechRecognizer("en-US", credentials);
